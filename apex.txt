@@ -1,0 +1,89 @@
+Microsoft Windows [Version 10.0.18363.1256]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+D:\app\User\product\11.2.0\dbhome_1\apex>sqlplus / as sysdba
+
+SQL*Plus: Release 11.2.0.1.0 Production on Tue Mar 1 06:48:10 2022
+
+Copyright (c) 1982, 2010, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL> @apxchpwd
+Enter a value below for the password for the Application Express ADMIN user.
+
+
+Enter a password for the ADMIN user              []
+
+Session altered.
+
+...changing password for ADMIN
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+SQL> @apex_epg_config D:\app\User\product\11.2.0\dbhome_1\apex\temp
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Directory created.
+
+declare
+*
+ERROR at line 1:
+ORA-22288: file or LOB operation FILEOPEN failed
+The system cannot find the path specified.
+ORA-06512: at "SYS.XMLTYPE", line 296
+ORA-06512: at line 18
+
+
+
+Commit complete.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+timing for: Load Images
+Elapsed: 00:00:23.87
+
+Session altered.
+
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+
+Session altered.
+
+
+Directory dropped.
+
+SQL> ALTER USER ANONYMOUS ACCOUNT UNLOCK;
+
+User altered.
+
+SQL> SELECT DBMS_XDB.GETHTTPPORT FROM DUAL;
+
+GETHTTPPORT
+-----------
+          0
+
+SQL> EXEC DBMS_XDB.SETHTTPPORT(8080);
+
+PL/SQL procedure successfully completed.
+
+SQL>
